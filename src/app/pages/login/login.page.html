@@ -1,8 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title color="warning" style="text-align: center"
-      >Skeleton APP</ion-title
+    <ion-title color="success" style="text-align: center"
+      ><h1>Skeleton APP</h1></ion-title
     >
+    <ion-text>
+      <p style="text-align: center">Aquí comienza todo</p>
+    </ion-text>
   </ion-toolbar>
 </ion-header>
 
@@ -10,19 +13,18 @@
   <div class="login-container">
     <ion-card class="login-card">
       <ion-card-header>
-        <ion-card-title>Iniciar Sesión</ion-card-title>
-        <ion-card-subtitle>Bienvenido de nuevo</ion-card-subtitle>
+        <ion-card-title>Bienvenido!</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
         <ion-item>
-          <ion-label position="floating">Email</ion-label>
-          <ion-input type="email" [(ngModel)]="email"></ion-input>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.user"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating">Password</ion-label>
-          <ion-input type="password" [(ngModel)]="password"></ion-input>
+          <ion-input type="password" [(ngModel)]="usuario.password"></ion-input>
         </ion-item>
 
         <div class="ion-padding">
@@ -32,14 +34,11 @@
         </div>
 
         <ion-button expand="block" (click)="login()" color="success"
-          >Login</ion-button
+          >Ingresar</ion-button
         >
 
         <div class="ion-padding">
-          <p>
-            ¿No tienes cuenta?
-            <a href="#" style="text-decoration: none">Regístrate aquí</a>
-          </p>
+          <a href="#" style="text-decoration: none">Crea tu cuenta gratis</a>
         </div>
       </ion-card-content>
     </ion-card>
