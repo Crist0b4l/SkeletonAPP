@@ -25,3 +25,48 @@
 #container a {
   text-decoration: none;
 }
+
+.header-welcome {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+.title-welcome {
+  font-size: 44px;
+  font-weight: 600;
+}
+.user-info{
+  padding-left: 40px;
+}
+
+.form-item-label-spacing {
+  ion-label {
+    min-width: 100px; 
+    max-width: 120px; 
+    margin-right: 10px; 
+  }
+}
+
+ion-item {
+  ion-input {
+    padding-left: 5px; 
+  }
+}
+
+.button-group {
+  display: flex; 
+  justify-content: space-around; 
+  align-items: center;
+}
+// Animacion para mover el elemento de izquierda a derecha
+@keyframes shake-animation {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); } 
+  40% { transform: translateX(5px); }  
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake-left-right {
+  animation: shake-animation 1s ease-in-out forwards;
+}

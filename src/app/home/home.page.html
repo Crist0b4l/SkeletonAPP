@@ -1,27 +1,104 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title color="success"> Skeleton APP </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-menu contentId="main-content">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title color="success">Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding"> Inicio</ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button color="success"></ion-menu-button>
+      </ion-buttons>
+      <ion-title color="success"> Skeleton APP </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>
-      Bienvenido {{userName}}
-      <br />
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://ionicframework.com/docs/components"
-        >UI Components</a
+  <ion-content [fullscreen]="true">
+    <ion-header class="ion-text-center header-welcome">
+      <ion-title class="title-welcome">Bienvenido!</ion-title>
+    </ion-header>
+    <div class="user-info">
+      <ion-text>
+        <p>Usuario: {{userName}}</p>
+      </ion-text>
+    </div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center"
+          >Información Adicional</ion-card-title
+        >
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item class="form-item-label-spacing">
+          <ion-label>Nombre</ion-label>
+          <ion-input
+            #nombreInput
+            type="text"
+            placeholder="Ingrese Nombre"
+            [(ngModel)]="nombre"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item class="form-item-label-spacing">
+          <ion-label>Apellido</ion-label>
+          <ion-input
+            #apellidoInput
+            type="text"
+            placeholder="Ingrese Apellido"
+            [(ngModel)]="apellido"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item class="form-item-label-spacing">
+          <ion-label>Nivel Educación</ion-label>
+          <ion-select
+            placeholder="Seleccione Nivel"
+            [(ngModel)]="nivelEducacion"
+          >
+            <ion-select-option value="basica">Básica</ion-select-option>
+            <ion-select-option value="media">Media</ion-select-option>
+            <ion-select-option value="superior">Superior</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item class="form-item-label-spacing">
+          <ion-label>Fecha Nacimiento</ion-label>
+          <mat-form-field appearance="fill" class="full-width-input">
+            <input
+              matInput
+              [matDatepicker]="picker"
+              [(ngModel)]="fechaNacimiento"
+            />
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </ion-item>
+
+        <div class="ion-padding-top button-group">
+          <ion-button fill="outline" (click)="limpiarForm()"
+            >Limpiar</ion-button
+          >
+          <ion-button fill="outline" (click)="mostrarDatos()"
+            >Mostrar</ion-button
+          >
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+
+  <ion-footer translucent="true">
+    <ion-toolbar>
+      <ion-title class="ion-text-center" size="small"
+        >App desarrollada por Cristóbal Varas Polanco</ion-title
       >
-    </p>
-  </div>
-</ion-content>
+    </ion-toolbar>
+  </ion-footer>
+</div>
